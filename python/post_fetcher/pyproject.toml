@@ -1,0 +1,31 @@
+[project]
+name = "post-fetcher"
+version = "0.1.0"
+description = "Concurrent API fetcher"
+readme = "README.md"
+authors = [
+    { name = "Ansters26", email = "atharva2004pandey@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+[project.scripts]
+post-fetcher = "post_fetcher.cli:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "respx>=0.23.1",
+    "ruff>=0.17.1",
+]
